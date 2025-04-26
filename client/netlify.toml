@@ -1,0 +1,11 @@
+[build]
+  command = "CI=false npm run build"
+  publish = "build"
+
+[build.environment]
+  REACT_APP_API_URL = "https://webtechasg-2.onrender.com/api/students"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: student-ms-frontend
+    env: static
+    buildCommand: npm install && chmod +x build.sh && ./build.sh
+    staticPublishPath: ./build
+    envVars:
+      - key: NODE_VERSION
+        value: 16
+      - key: REACT_APP_API_URL
+        value: https://webtechasg-2.onrender.com/api/students

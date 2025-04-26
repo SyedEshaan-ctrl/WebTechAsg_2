@@ -1,0 +1,19 @@
+{
+  "buildCommand": "CI=false npm run build",
+  "staticPublishPath": "build",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/*", "dest": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "**/*",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
+  ],
+  "env": {
+    "REACT_APP_API_URL": "https://webtechasg-2.onrender.com/api/students"
+  }
+}

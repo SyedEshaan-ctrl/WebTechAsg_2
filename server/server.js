@@ -10,11 +10,11 @@ dotenv.config();
 const app = express();
 
 // Middleware
-// Configure CORS to allow requests from frontend
+// Configure CORS to allow all requests (more permissive for troubleshooting)
 app.use(cors({
-  origin: ['https://webtechasg-2-client.onrender.com', 'http://localhost:3000'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: '*', // Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
 }));
 app.use(express.json());
 

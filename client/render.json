@@ -1,5 +1,5 @@
 {
-  "buildCommand": "CI=false npm run build",
+  "buildCommand": "npm install && CI=false npx react-scripts build",
   "staticPublishPath": "build",
   "routes": [
     { "handle": "filesystem" },

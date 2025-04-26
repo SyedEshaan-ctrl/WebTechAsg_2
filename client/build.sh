@@ -1,4 +1,6 @@
 #!/bin/bash
 # Fix permission issues
-chmod +x node_modules/.bin/react-scripts
-npm run build
+echo "Setting permissions for react-scripts"
+chmod -R +x node_modules/.bin/
+echo "Running build with CI=false"
+CI=false npx react-scripts build

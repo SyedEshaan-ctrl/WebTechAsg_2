@@ -4,6 +4,13 @@ services:
     env: static
     buildCommand: npm install && chmod +x build.sh && ./build.sh
     staticPublishPath: ./build
+    routes:
+      - source: /
+        destination: /index.html
+      - source: /static/*
+        destination: /static/*
+      - source: /*
+        destination: /index.html
     envVars:
       - key: NODE_VERSION
         value: 16

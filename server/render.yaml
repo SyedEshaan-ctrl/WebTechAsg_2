@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: student-ms-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false # This means you'll need to set this value in the Render dashboard

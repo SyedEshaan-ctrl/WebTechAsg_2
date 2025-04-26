@@ -62,11 +62,11 @@ function App() {
       <div className={isLoggedIn ? "container mt-4" : ""}>
         <Routes>
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
           <Route path="/students" element={isLoggedIn ? <StudentList /> : <Navigate to="/login" />} />
           <Route path="/students/add" element={isLoggedIn ? <AddStudent /> : <Navigate to="/login" />} />
           <Route path="/students/edit/:id" element={isLoggedIn ? <EditStudent /> : <Navigate to="/login" />} />
-          <Route path="*" element={<Navigate to="/login" />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </div>

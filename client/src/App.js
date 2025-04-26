@@ -61,17 +61,12 @@ function App() {
       {isLoggedIn && <Navbar onLogout={handleLogout} />}
       <div className={isLoggedIn ? "container mt-4" : ""}>
         <Routes>
-          {/* Always show login page at /login regardless of login status for testing */}
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-          
-          {/* Protected routes */}
-          <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
+          <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/students" element={isLoggedIn ? <StudentList /> : <Navigate to="/login" />} />
           <Route path="/students/add" element={isLoggedIn ? <AddStudent /> : <Navigate to="/login" />} />
           <Route path="/students/edit/:id" element={isLoggedIn ? <EditStudent /> : <Navigate to="/login" />} />
-          
-          {/* Catch-all route */}
-          <Route path="*" element={<Navigate to={isLoggedIn ? "/" : "/login"} />} />
+          <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </div>
     </div>

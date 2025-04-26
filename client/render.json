@@ -14,6 +14,6 @@
     }
   ],
   "env": {
-    "REACT_APP_API_URL": "https://webtechasg-2.onrender.com/api/students"
+    "REACT_APP_API_URL": "https://webtechasg-2.onrender.com/api"
   }
 }
